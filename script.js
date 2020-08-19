@@ -7,13 +7,13 @@
     let video = null;
     let canvas = null;
     let photo = null;
-    let startbutton = null;
+    let btn = null;
 
     function startup() {
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
-        startbutton = document.getElementById('startbutton');
+        btn = document.getElementById('takePhoto');
 
         navigator.mediaDevices.getUserMedia({ video: true, audio: false })
             .then(function (stream) {
@@ -40,7 +40,7 @@
             }
         }, false);
 
-        startbutton.addEventListener('click', function (ev) {
+        btn.addEventListener('click', function (ev) {
             takepicture();
             ev.preventDefault();
         }, false);
